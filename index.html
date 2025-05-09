@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    
+    <!-- Botão de alternância de tema -->
+  <div class="theme-toggle-container">
+    <button class="theme-toggle-btn" id="themeToggle">
+      <svg class="sun-icon theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5"/>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <svg class="moon-icon theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+      </svg>
+    </button>
+  </div>
+
+    <main class="main-container">
+      
+      <header class="input-container">
+        <div class="input-wrapper">
+          <input class="city-input" placeholder="Procurar Cidade" type="text" />
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="weather-info" >
+        <div class="location-date-container">
+          <div class="location-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="location-info">
+              <h4 class="country-txt">São Paulo</h4>
+              <p class="city-txt">São Paulo, SP</p>
+            </div>
+          </div>
+          <div class="date">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days-icon lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            <h5 class="current-date-txt">Qui, 08 de Maio de 2025</h5>
+          </div>
+        </div>
+
+        <div class="weather-summary-container">
+          <img src="assets/weather/clouds.svg" class="weather-summary-img" />
+          <div class="weather-summary-info">
+            <h1 class="temp-text">29 °C</h1>
+            <h5 class="condition-txt">Nublado</h5>
+            <p class="feels-like-txt">Sensação Térmica: 30 °C</p>
+          </div>
+        </div>
+
+        <div class="weather-conditions-container">
+          <div class="condition-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets-icon lucide-droplets"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+            <div class="condition-info">
+              <p class="condition-name">Umidade</p>
+              <h4 class="condition-value">60%</h4>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind-icon lucide-wind"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>
+            <div class="condition-info">
+              <p class="condition-name">Vento</p>
+              <h4 class="condition-value">2 km/h</h4>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer-sun-icon lucide-thermometer-sun"><path d="M12 9a4 4 0 0 0-2 7.5"/><path d="M12 3v2"/><path d="m6.6 18.4-1.4 1.4"/><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/><path d="M4 13H2"/><path d="M6.34 7.34 4.93 5.93"/></svg>
+            <div class="condition-info">
+              <p class="condition-name">Índice UV</p>
+              <h4 class="condition-value">5</h4>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind-arrow-down-icon lucide-wind-arrow-down"><path d="M10 2v8"/><path d="M12.8 21.6A2 2 0 1 0 14 18H2"/><path d="M17.5 10a2.5 2.5 0 1 1 2 4H2"/><path d="m6 6 4 4 4-4"/></svg>
+            <div class="condition-info">
+              <p class="condition-name">Pressão do Ar</p>
+              <h4 class="condition-value">1012 mb</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast-items-container">
+          <div class="forecast-item">
+            <h5 class="day-txt">Seg</h5>
+            <img src="assets/weather/atmosphere.svg" class="forecast-img" />
+            <h4 class="temp-txt">30 °C</h4>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="day-txt">Ter</h5>
+            <img src="assets/weather/clear.svg" class="forecast-img" />
+            <h4 class="temp-txt">20 °C</h4>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="day-txt">Qua</h5>
+            <img src="assets/weather/clouds.svg" class="forecast-img" />
+            <h4 class="temp-txt">25 °C</h4>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="day-txt">Qui</h5>
+            <img src="assets/weather/drizzle.svg" class="forecast-img" />
+            <h4 class="temp-txt">22 °C</h4>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="day-txt">Sex</h5>
+            <img src="assets/weather/rain.svg" class="forecast-img" />
+            <h4 class="temp-txt">18 °C</h4>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="day-txt">Sáb</h5>
+            <img src="assets/weather/snow.svg" class="forecast-img" />
+            <h4 class="temp-txt">2 °C</h4>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="day-txt">Dom</h5>
+            <img src="assets/weather/thunderstorm.svg" class="forecast-img" />
+            <h4 class="temp-txt">2 °C</h4>
+          </div>
+        </div>
+              
+      </section>
+
+      <section class="section-message">
+        <img src="assets/message/search-city.png" alt="Procurar por Cidade"/>
+        <h1>Pesquise por uma cidade</h1>
+        <p>Digite o nome da cidade e clique no botão de pesquisa.</p>
+      </section>
+
+      <section class="section-message"  style="display: none;">
+        <img src="assets/message/not-found.png" alt="Cidade não Encontrada"/>
+        <h1>Cidade não encontrada</h1>
+        <p>Algo deu errado na sua pesquisa, tente novamente ou verifique se cometeu algum erro...</p>
+      </section>
+
+    </main>
+  </body>
+</html>

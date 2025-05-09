@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --white: #fff;
+  --black: rgba(0, 0, 0, 0.15);
+  --blur-bg: rgba(255, 255, 255, 0.15);
+  --font-main: 'Montserrat', sans-serif;
+  --blue-btn: #6f9ab7;
+  --darkblue-btn: #6f9ab7;
+  --darkblue: #1a1a2e;
+  --lightblue: #16213e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+    background: url('assets/bg.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--black);
+    backdrop-filter: blur(10px);
+    z-index: 0;
+}
+
+.main-container{
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    max-height: 650px;
+    height: 100%;
+    margin: 0 10px;
+    background: linear-gradient(
+        to top,rgba(0, 0, 0, 0.15), 
+        rgba(255, 255, 255, 0.15));
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+    padding: 20px;
+}
+
+/* TEXT STYLES */
+h1, h4, h5, p {
+    color: var(--white);
+  }
+  
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  h5 {
+    font-size: 15px;
+  font-weight: 500;
+  }
+
+  p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/*  INPUT CONTAINER */
+
+.input-container{
+    margin-bottom: 25px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+  
+.city-input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 99px;
+    border: 3px solid transparent;
+    background: var(--black);
+    color: var(--white);
+    font-size: 15px;
+    transition: border 0.25s ease;
+}
+  
+.city-input::placeholder {
+    color: var(--white);
+}
+  
+.city-input:focus {
+    border-color: var(--white);
+    background: var(--black);
+    outline: none;
+}
+  
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 18px;
+}
+
+/*  WEATHER SECTION */
+
+.weather-info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.location-date-container,
+.weather-summary-container,
+.weather-conditions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-summary-container{
+    padding: 0 15px;
+    border-radius: 8px;
+}
+
+.location-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date,
+.condition-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather-summary-img {
+  width: 180px;
+  height: 180px;
+}
+
+.weather-summary-info{
+    text-align: end;
+}
+
+/* CONDITIONS GRID */
+
+.weather-conditions-container {
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.condition-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: calc(50% - 8px); /* 2 itens por linha, com gap */
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.condition-info {
+  display: flex;
+  flex-direction: column;
+}
+  
+svg {
+    font-size: 20px;
+    color: var(--white);
+}
+
+/* FORECAST SECTION */
+
+.forecast-items-container::-webkit-scrollbar{
+    height: 8px;
+}
+
+.forecast-items-container::-webkit-scrollbar-thumb{
+    background-color: var(--blur-bg);
+    border-radius: 99px;
+}
+
+.forecast-items-container::-webkit-scrollbar-track{
+    background-color: var(--black);
+}
+
+.forecast-items-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;    /* Scroll apenas horizontal */
+    overflow-y: hidden;  /* Impede scroll vertical */
+    padding: 10px 0;
+}
+
+.forecast-item{
+    min-width: 70px;
+    background-color: var(--blur-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.forecast-item:hover{
+    outline: 2px solid var(--white);
+    transform: scale(1.05);
+}
+
+.forecast-item img{
+    width: 35px;
+    height: 35px;
+}
+
+/* SECTION MESSAGE */
+
+.section-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.section-message img {
+    height: 350px;
+    width: fit-content;
+}
+
+/* SECTION EFFECT DARK-MODE */
+
+.theme-toggle-btn {
+  background: #3498db;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Configuração dos ícones de tema */
+.theme-icon {
+  stroke: var(--white);
+}
+
+.moon-icon {
+  display: none;
+}
+
+/* Modificadores para tema escuro */
+body.dark-theme {
+  background-color: #1a1a2e;
+  color: var(--white);
+}
+
+body.dark-theme .main-container {
+  background-color: #242440;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+
+body.dark-theme .city-input {
+  background-color: #16213e;
+  border-color: #30475e;
+  color: var(--white);
+}
+
+body.dark-theme .search-btn svg {
+  stroke: #4361ee;
+}
+
+body.dark-theme .theme-toggle-btn {
+  background-color: #4361ee;
+}
+
+body.dark-theme .theme-toggle-btn:hover {
+  background-color: #3a56d4;
+}
+
+body.dark-theme .theme-toggle-btn .sun-icon {
+  display: none;
+}
+
+body.dark-theme .theme-toggle-btn .moon-icon {
+  display: block;
+}
+
+body.dark-theme .weather-summary-container,
+body.dark-theme .condition-item,
+body.dark-theme .forecast-item {
+  background-color: #010b27;
+  background-blend-mode: multiply;
+}
+
+body.dark-theme svg {
+  stroke: var(--white);
+}
+
+body.dark-theme .city-txt,
+body.dark-theme .condition-name,
+body.dark-theme .feels-like-txt,
+body.dark-theme .section-message p {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+/* Botão fixo no topo direito */
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* Efeito preto e branco no fundo em tema escuro */
+body.dark-theme::before {
+  filter: grayscale(100%);
+  background: rgba(1, 2, 3, 0.85);
+  background-blend-mode: multiply;
+}
+
+/* Transição suave do efeito */
+body::before {
+  transition: filter 0.3s ease;
+}
+
