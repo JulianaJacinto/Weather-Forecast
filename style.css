@@ -6,9 +6,11 @@
   --blur-bg: rgba(255, 255, 255, 0.15);
   --font-main: 'Montserrat', sans-serif;
   --blue-btn: #6f9ab7;
-  --darkblue-btn: #6f9ab7;
-  --darkblue: #1a1a2e;
-  --lightblue: #16213e;
+  --darkblue-btn: #4c6e98;
+  --blackblue: #1a1a2e;
+  --darkblue: #242440;
+  --lightblue: #5e5888;
+  
 }
 
 * {
@@ -19,37 +21,38 @@
 }
 
 body {
-    background: url('assets/bg.jpg') center/cover no-repeat;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  background: url('assets/bg.jpg') center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
   
 body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: var(--black);
-    backdrop-filter: blur(10px);
-    z-index: 0;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--black);
+  backdrop-filter: blur(10px);
+  z-index: 0;
 }
 
 .main-container{
-    border-radius: 12px;
-    max-width: 450px;
-    width: 100%;
-    max-height: 650px;
-    height: 100%;
-    margin: 0 10px;
-    background: linear-gradient(
-        to top,rgba(0, 0, 0, 0.15), 
-        rgba(255, 255, 255, 0.15));
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter: blur(100px);
-    padding: 20px;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 100%;
+  max-height: 650px;
+  height: 100%;
+  margin: 0 10px;
+  background: linear-gradient(
+      to top,rgba(0, 0, 0, 0.15), 
+      rgba(255, 255, 255, 0.15));
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  padding: 20px;
 }
 
 /* TEXT STYLES */
@@ -80,53 +83,53 @@ h1, h4, h5, p {
 /*  INPUT CONTAINER */
 
 .input-container{
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .input-wrapper {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
   
 .city-input {
-    width: 100%;
-    padding: 10px 15px;
-    border-radius: 99px;
-    border: 3px solid transparent;
-    background: var(--black);
-    color: var(--white);
-    font-size: 15px;
-    transition: border 0.25s ease;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 99px;
+  border: 3px solid transparent;
+  background: var(--black);
+  color: var(--white);
+  font-size: 15px;
+  transition: border 0.25s ease;
 }
   
 .city-input::placeholder {
-    color: var(--white);
+  color: var(--white);
 }
   
 .city-input:focus {
-    border-color: var(--white);
-    background: var(--black);
-    outline: none;
+  border-color: var(--white);
+  background: var(--black);
+  outline: none;
 }
   
 .search-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--white);
-    font-size: 18px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 18px;
 }
 
 /*  WEATHER SECTION */
 
 .weather-info{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .location-date-container,
@@ -138,14 +141,14 @@ h1, h4, h5, p {
 }
 
 .weather-summary-container{
-    padding: 0 15px;
-    border-radius: 8px;
+  padding: 0 15px;
+  border-radius: 8px;
 }
 
 .location-container{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .date,
@@ -161,7 +164,7 @@ h1, h4, h5, p {
 }
 
 .weather-summary-info{
-    text-align: end;
+  text-align: end;
 }
 
 /* CONDITIONS GRID */
@@ -172,13 +175,13 @@ h1, h4, h5, p {
 }
 
 .condition-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: calc(50% - 8px); /* 2 itens por linha, com gap */
-    padding: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: calc(50% - 8px); /* 2 itens por linha, com gap */
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 
 .condition-info {
@@ -187,76 +190,76 @@ h1, h4, h5, p {
 }
   
 svg {
-    font-size: 20px;
-    color: var(--white);
+  font-size: 20px;
+  color: var(--white);
 }
 
 /* FORECAST SECTION */
 
 .forecast-items-container::-webkit-scrollbar{
-    height: 8px;
+  height: 8px;
 }
 
 .forecast-items-container::-webkit-scrollbar-thumb{
-    background-color: var(--blur-bg);
-    border-radius: 99px;
+  background-color: var(--blur-bg);
+  border-radius: 99px;
 }
 
 .forecast-items-container::-webkit-scrollbar-track{
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 .forecast-items-container {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;    /* Scroll apenas horizontal */
-    overflow-y: hidden;  /* Impede scroll vertical */
-    padding: 10px 0;
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;    /* Scroll apenas horizontal */
+  overflow-y: hidden;  /* Impede scroll vertical */
+  padding: 10px 0;
 }
 
 .forecast-item{
-    min-width: 70px;
-    background-color: var(--blur-bg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    gap: 5px;
-    border-radius: 12px;
-    transition: all 0.25s ease;
-    cursor: pointer;
+  min-width: 70px;
+  background-color: var(--blur-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
 .forecast-item:hover{
-    outline: 2px solid var(--white);
-    transform: scale(1.05);
+  outline: 2px solid var(--white);
+  transform: scale(1.05);
 }
 
 .forecast-item img{
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 /* SECTION MESSAGE */
 
 .section-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-    margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  margin-top: 25px;
 }
 
 .section-message img {
-    height: 350px;
-    width: fit-content;
+  height: 250px;
+  width: fit-content;
 }
 
 /* SECTION EFFECT DARK-MODE */
 
 .theme-toggle-btn {
-  background: #3498db;
+  background: var(--blue-btn);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -271,7 +274,7 @@ svg {
 }
 
 .theme-toggle-btn:hover {
-  background-color: #2980b9;
+  background-color: var(--darkblue-btn);
 }
 
 /* Configuração dos ícones de tema */
@@ -285,32 +288,32 @@ svg {
 
 /* Modificadores para tema escuro */
 body.dark-theme {
-  background-color: #1a1a2e;
+  background-color: var(--darkblue);
   color: var(--white);
 }
 
 body.dark-theme .main-container {
-  background-color: #242440;
+  background-color: var(--blackblue);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 
 }
 
 body.dark-theme .city-input {
-  background-color: #16213e;
-  border-color: #30475e;
+  background-color: rgba(14, 14, 28, 0.60);
+  border-color: var(--lightblue);
   color: var(--white);
 }
 
 body.dark-theme .search-btn svg {
-  stroke: #4361ee;
+  stroke: var(--lightblue);
 }
 
 body.dark-theme .theme-toggle-btn {
-  background-color: #4361ee;
+  background-color: var(--blue-btn);
 }
 
 body.dark-theme .theme-toggle-btn:hover {
-  background-color: #3a56d4;
+  background-color: var(--darkblue-btn);
 }
 
 body.dark-theme .theme-toggle-btn .sun-icon {
@@ -324,8 +327,7 @@ body.dark-theme .theme-toggle-btn .moon-icon {
 body.dark-theme .weather-summary-container,
 body.dark-theme .condition-item,
 body.dark-theme .forecast-item {
-  background-color: #010b27;
-  background-blend-mode: multiply;
+  background: rgba(14, 14, 28, 0.60);
 }
 
 body.dark-theme svg {
@@ -340,7 +342,6 @@ body.dark-theme .section-message p {
   opacity: 0.8;
 }
 
-/* Botão fixo no topo direito */
 .theme-toggle-container {
   position: fixed;
   top: 20px;
@@ -348,9 +349,7 @@ body.dark-theme .section-message p {
   z-index: 999;
 }
 
-/* Efeito preto e branco no fundo em tema escuro */
 body.dark-theme::before {
-  filter: grayscale(100%);
   background: rgba(1, 2, 3, 0.85);
   background-blend-mode: multiply;
 }
